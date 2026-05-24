@@ -1,0 +1,9 @@
+package com.backend_poc.backend_poc.repository;
+ 
+import com.backend_poc.backend_poc.entity.Lesson;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+ 
+public interface LessonRepository extends JpaRepository<Lesson, Long> {
+    List<Lesson> findByCourseIdOrderByOrderIndex(Long courseId);
+}
